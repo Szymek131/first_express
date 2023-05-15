@@ -16,11 +16,7 @@ app.use('/user', (req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
-  res.show('home.html');
-});
-
-app.get('/home', (req, res) => {
+app.get(['/', '/home'], (req, res) => {
   res.show('home.html');
 });
 
